@@ -30,9 +30,10 @@ defmodule Blitzy do
     """
   end
 
-  def average([]), do: 0
-
   def average(nums) do
-    Enum.sum(nums) / length(nums)
+    case Enum.sum(nums) do
+      0   -> 0
+      sum -> sum / length(nums)
+    end
   end
 end
